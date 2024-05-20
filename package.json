@@ -14,7 +14,8 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check": "npm-check -u"
   },
   "dependencies": {
     "pinia": "^2.1.7",
@@ -46,8 +47,10 @@
     "husky": "^9.0.11",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
+    "npm-check": "^6.0.1",
     "npm-run-all2": "^6.1.2",
     "prettier": "^3.2.5",
+    "reset-css": "^5.0.2",
     "start-server-and-test": "^2.0.3",
     "typescript": "~5.4.0",
     "vite": "^5.2.8",

@@ -28,3 +28,6 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+commitlint.config.cjs
+.cz-config.cjs

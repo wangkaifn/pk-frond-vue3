@@ -12,20 +12,45 @@
     "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --color --ignore-path .gitignore",
     "format": "prettier --write src/",
     "prepare": "husky",
-    "check": "npm-check -u"
+    "check": "npm-check -u",
+    "commit": "git-cz"
   },
   "dependencies": {
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix"
+    "*.{js,jsx,ts,tsx}": [
+      "pnpm run lint",
+      "pnpm run format"
+    ],
+    "*.vue": [
+      "pnpm run lint",
+      "pnpm run format"
+    ],
+    "*.{md,json}": [
+      "pnpm run format"
+    ],
+    "*.{css,scss,less,}": [
+      "pnpm run format"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -40,7 +65,9 @@
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.5",
     "@vue/tsconfig": "^0.5.1",
+    "commitizen": "^4.3.0",
     "cypress": "^13.7.2",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-vue": "^9.23.0",

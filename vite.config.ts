@@ -14,6 +14,11 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 // 如果使用了AutoImport vue-router 需要从 VueRouterAutoImports引入
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+
+// 自动导入组件在页面中不需要import 去导入
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -39,6 +44,15 @@ export default defineConfig({
         VueRouterAutoImports,
         '@vueuse/core'
       ]
+    }),
+    Components({
+      /* options */
+      // 允许子目录作为组件的命名空间前缀
+      directoryAsNamespace: true,
+      // 省略相同的前缀
+      collapseSamePrefixes: true,
+      // 集成使用 element-plus(安装该组件在进行相应的配置) 其他组件库相同用法
+      resolvers: [ElementPlusResolver()]
     })
   ],
   resolve: {

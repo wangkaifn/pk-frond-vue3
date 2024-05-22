@@ -4,6 +4,7 @@
     <div ref="target" class="w-40 h-40 bg-gray-300">
       X: {{ x }} Y: {{ y }} isOutside: {{ isOutside }}
     </div>
+    <el-button>Button</el-button>
   </div>
 </template>
 

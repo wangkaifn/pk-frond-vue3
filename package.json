@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@unocss/reset": "^0.60.3",
+    "@vueuse/core": "^10.9.0",
     "pinia": "^2.1.7",
     "vite-plugin-vue-layouts": "0.8.0",
     "vue": "^3.4.21",
@@ -83,6 +84,7 @@
     "start-server-and-test": "^2.0.3",
     "typescript": "~5.4.0",
     "unocss": "^0.60.3",
+    "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-router": "^0.6.4",
     "vite": "^5.2.8",
     "vitest": "^1.4.0",

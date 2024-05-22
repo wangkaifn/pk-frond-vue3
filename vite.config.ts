@@ -19,6 +19,9 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+// 布局
+import Layouts from 'vite-plugin-vue-layouts'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -53,6 +56,11 @@ export default defineConfig({
       collapseSamePrefixes: true,
       // 集成使用 element-plus(安装该组件在进行相应的配置) 其他组件库相同用法
       resolvers: [ElementPlusResolver()]
+    }),
+    Layouts({
+      // 路径
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'default'
     })
   ],
   resolve: {

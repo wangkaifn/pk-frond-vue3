@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "pinia": "^2.1.7",
+    "vite-plugin-vue-layouts": "0.8.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
@@ -80,6 +81,7 @@
     "reset-css": "^5.0.2",
     "start-server-and-test": "^2.0.3",
     "typescript": "~5.4.0",
+    "unplugin-vue-router": "^0.6.4",
     "vite": "^5.2.8",
     "vitest": "^1.4.0",
     "vue-tsc": "^2.0.11"

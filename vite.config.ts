@@ -19,6 +19,10 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+// 自动导入图标
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -52,7 +56,16 @@ export default defineConfig({
       // 省略相同的前缀
       collapseSamePrefixes: true,
       // 集成使用 element-plus(安装该组件在进行相应的配置) 其他组件库相同用法
-      resolvers: [ElementPlusResolver()]
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          // 前缀
+          prefix: 'i'
+        })
+      ]
+    }),
+    Icons({
+      autoInstall: true
     })
   ],
   resolve: {

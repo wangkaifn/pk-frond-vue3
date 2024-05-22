@@ -5,6 +5,8 @@
       X: {{ x }} Y: {{ y }} isOutside: {{ isOutside }}
     </div>
     <el-button>Button</el-button>
+    <i-carbon-accessibility />
+    <i-mdi-account-box style="font-size: 2em; color: red" />
   </div>
 </template>
 

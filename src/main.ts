@@ -5,8 +5,10 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-// 样式重置
-import 'reset-css'
+
+import 'virtual:uno.css'
+// 使用 tailwind 提供的重置样式
+import '@unocss/reset/tailwind.css'
 const app = createApp(App)
 
 app.use(createPinia())

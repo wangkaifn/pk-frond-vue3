@@ -24,6 +24,9 @@ import Layouts from 'vite-plugin-vue-layouts'
 
 import { VitePWA } from 'vite-plugin-pwa'
 
+// mock
+import { viteMockServe } from 'vite-plugin-mock'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -92,6 +95,10 @@ export default defineConfig({
           }
         ]
       }
+    }),
+    viteMockServe({
+      mockPath: 'mock',
+      enable: true
     })
   ],
   resolve: {

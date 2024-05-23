@@ -14,6 +14,7 @@ declare module 'vue' {
     IconsIconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconsIconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconsIconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    ReloadPrompt: typeof import('./src/components/ReloadPrompt.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

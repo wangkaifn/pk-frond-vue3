@@ -19,9 +19,23 @@
 </template>
 
 <script setup lang="ts">
+import { registerSW } from 'virtual:pwa-register'
+
 const target = ref(null)
 
 const { x, y, isOutside } = useMouseInElement(target)
+
+onMounted(() => {
+  registerSW({
+    immediate: true,
+    onRegisteredSW: (url, registration) => {
+      console.log('SW registered: ', registration)
+      setInterval(() => {
+        registration && registration.update()
+      }, 3000)
+    }
+  })
+})
 </script>
 
 <style scoped></style>

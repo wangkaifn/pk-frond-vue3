@@ -15,10 +15,13 @@
     <button class="i-carbon-sun dark:i-carbon-moon" />
     <!-- Twemoji of laugh, turns to tear on hovering -->
     <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
+    pwa register 测试
+    <ReloadPrompt></ReloadPrompt>
   </div>
 </template>
 
 <script setup lang="ts">
+import ReloadPrompt from '@/components/ReloadPrompt.vue'
 import { registerSW } from 'virtual:pwa-register'
 
 const target = ref(null)
@@ -28,6 +31,9 @@ const { x, y, isOutside } = useMouseInElement(target)
 onMounted(() => {
   registerSW({
     immediate: true,
+    // onNeedRefresh: () => {
+    //   console.log('SW need refresh')
+    // },
     onRegisteredSW: (url, registration) => {
       console.log('SW registered: ', registration)
       setInterval(() => {

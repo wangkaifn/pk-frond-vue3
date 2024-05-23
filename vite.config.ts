@@ -64,7 +64,35 @@ export default defineConfig({
       layoutsDirs: 'src/layouts',
       defaultLayout: 'default'
     }),
-    VitePWA({})
+    VitePWA({
+      // registerType: 'autoUpdate' // PWA 注册类型。autoUpdate 意味着 service worker 会自动检查和更新新的内容。
+      manifest: {
+        // PWA 清单文件
+        name: 'My Awesome Vue App', // 应用名称
+        short_name: 'VueApp', // 短名称
+        description: 'My Awesome Vue App', // 应用描述
+        theme_color: '#42b983', // 主题颜色
+        icons: [
+          // 图标设置
+          {
+            src: '192x192.png', // 图标路径
+            sizes: '192x192', // 图标大小
+            type: 'image/png' // 图标类型
+          },
+          {
+            src: '512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          },
+          {
+            src: '512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable' // 图标用途
+          }
+        ]
+      }
+    })
   ],
   resolve: {
     alias: {
